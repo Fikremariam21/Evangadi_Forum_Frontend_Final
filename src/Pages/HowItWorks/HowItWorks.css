@@ -1,0 +1,158 @@
+
+   /* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif; */
+    /*background: linear-gradient(135deg, #0c0c0c, #af4261); */
+    /* background-image: linear-gradient(310deg, #e7e9ee, #928f8f); */
+/* 
+    color: #464444;
+  }
+  
+  .how-it-works {
+    margin: 84px auto;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #0e0e0e;
+  }
+  
+  .how-it-works h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    font-weight: bold;
+  }
+  
+  .how-it-works-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .how-it-works-step {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .step-icon {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #424141;
+     
+  }
+  
+  .how-it-works-step h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+  
+  .how-it-works-step p {
+    margin: 10px 0;
+    font-size: 1em;
+  }
+   */
+
+
+
+   body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333; /* Darker, more readable text */
+}
+
+.how-it-works {
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 30px; /* Increased padding */
+    background: rgba(255, 255, 255, 0.9); /* More opaque background */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    color: #222;
+}
+
+.how-it-works h2 {
+    text-align: center;
+    margin-bottom: 40px; /* Increased margin */
+    font-size: 3em; /* Larger heading */
+    font-weight: bold;
+    color: #007bff; /* Accent color for heading */
+}
+
+.how-it-works-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap */
+}
+
+.how-it-works-step {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px; /* Increased padding */
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out; /* Add a subtle hover effect */
+}
+
+.how-it-works-step:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.step-icon {
+    font-size: 2.5em; /* Larger icon */
+    margin-bottom: 15px; /* Increased margin */
+    color: #007bff; /* Accent color for icons */
+    transition: color 0.2s ease-in-out; /* Smooth color transition on hover */
+}
+
+.how-it-works-step:hover .step-icon {
+    color: #0056b3; /* Darker accent color on hover */
+}
+
+.how-it-works-step h3 {
+    margin-top: 0;
+    font-size: 1.75em; /* Slightly larger */
+    color: #444;
+}
+
+.how-it-works-step p {
+    margin: 15px 0; /* Increased margin */
+    font-size: 1.1em; /* Slightly larger */
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .how-it-works {
+        padding: 20px;
+        margin: 30px auto;
+    }
+
+    .how-it-works h2 {
+        font-size: 2.5em;
+        margin-bottom: 30px;
+    }
+
+    .how-it-works-step {
+        padding: 20px;
+    }
+
+    .step-icon {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .how-it-works-step h3 {
+        font-size: 1.4em;
+    }
+
+    .how-it-works-step p {
+        font-size: 1em;
+    }
+}
