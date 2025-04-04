@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./SignUp.css"; 
-import axios from "../../Components/axios";
+import axios from "../../API/axios";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Spinner } from "react-bootstrap"; // Import Spinner from react-bootstrap

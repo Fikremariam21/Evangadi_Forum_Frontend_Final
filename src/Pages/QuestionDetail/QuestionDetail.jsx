@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { QuestionContext } from "../../Context/QuestionContext";
-import axios from "../../Components/axios";
+import axios from "../../API/axios";
 import { userProvider } from "../../Context/UserProvider";
 import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from "react-toastify";

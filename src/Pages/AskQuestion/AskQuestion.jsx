@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { userProvider } from "../../Context/UserProvider";
 import { v4 as uuidv4 } from "uuid";
-import axios from "../../Components/axios";
+import axios from "../../API/axios";
 import { useForm } from "react-hook-form";
 import "./AskQuestion.css";
 import { Link } from "react-router-dom";

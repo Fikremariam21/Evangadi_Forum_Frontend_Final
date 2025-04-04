@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./SignIn.css";
 import { userProvider } from "../../Context/UserProvider";
-import axios from "../../Components/axios";
+import axios from "../../API/axios";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";

@@ -7,7 +7,7 @@ import QuestionDetail from "./Pages/QuestionDetail/QuestionDetail.jsx";
 import AskQuestion from "./Pages/AskQuestion/AskQuestion";
 // import SignUp from "./Pages/SignUp/SignUp";
 import { UserProvider, userProvider } from "./Context/UserProvider";
-import axios from "./Components/axios";
+import axios from "./API/axios.js";
 import { useContext, useEffect } from "react";
 import { QuestionContext } from "./Context/QuestionContext";
 import HowItWorks from "./Pages/HowItWorks/HowItWorks";

@@ -4,7 +4,7 @@ import Question from "../Question/Question";
 import { userProvider } from "../../Context/UserProvider";
 import { useNavigate } from "react-router-dom";
 // import axios from "axios";
-import axios from "../../Components/axios";
+import axios from "../../API/axios";
 import { QuestionContext } from "../../Context/QuestionContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Pagination } from "react-bootstrap";
