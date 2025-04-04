@@ -9,8 +9,8 @@ import { QuestionProvider } from './Context/QuestionContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-  <UserProvider>
+  <BrowserRouter basename="/Evangadi_Forum_Frontend_Final">
+  <UserProvider >
     <QuestionProvider>
         <App />
     </QuestionProvider>
