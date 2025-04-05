@@ -1,62 +1,94 @@
+
+/* === Base Styles (Mobile First - applies to all screen sizes unless overridden) === */
 .footer {
-
     background-color: #3B455A;
-    /* padding-top: 20px; */
-    /* margin-top: 20px; */
-
+    padding: 2rem 1rem;  
 }
 
 .title {
-    font-size: 18px;
+    font-size: 1.125rem; /* 18px */
     color: #fff;
+    margin-bottom: 1rem; /* Space below titles */
 }
 
-ul>li>a {
-    line-height: 1.4em;
+.footer ul {
+    list-style: none;  
+    padding-left: 0;  
+    margin-bottom: 0;  
+}
+
+.footer ul li {
+    color: lightgray;
+    line-height: 1.6; /* Slightly more line-height for readability */
+    margin-bottom: 0.5rem; /* Space between list items */
+}
+.footer ul li:last-child {
+    margin-bottom: 0; /* No space after the last item in a list */
+}
+.footer ul li a {
+    color: lightgray;
     text-decoration: none;
-    color: lightgray;
+    display: inline-block;
+    transition: color 0.2s ease-in-out;
+}
+.footer ul li a:hover {
+     color: #fe8303; /* Combine hover styles */
 }
 
-ul {
-    list-style: none;
+.footer_logo {
+    margin-bottom: 2rem; /* Space below logo section on mobile */
 }
 
-.net>li {
-    color: lightgray;
-    line-height: 1.4em;
-    padding-bottom: 10px;
+.footer_logo img {
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 1rem; /* Space between logo and icons */
 }
 
-.title,
-.net,
-.st {
-    padding-left: 0;
-    margin-left: 0;
+.social-icons {
+    font-size: 1.375rem; /* 22px */
 }
 
-.ic {
-    width: 235px;
-    font-size: 22px;
-
-}
-
-.fab {
+.social-icons a {
     color: white;
+    margin: 0 0.5rem; /* Add horizontal spacing between icons */
+    transition: color 0.2s ease-in-out;
+}
+.social-icons a:hover {
+    color: #fe8303;
 }
 
-.tp {
-    padding-top: 50px;
-    padding-bottom: 30px;
+/* Spacing between the stacked columns on mobile */
+/* Using the Bootstrap row class directly */
+.footer .row > [class^="col-"] { /* Target direct column children of the row */
+     margin-bottom: 2rem; /* Add space below each column when stacked */
+}
+.footer .row > [class^="col-"]:last-child {
+     margin-bottom: 0; /* Remove margin from the last column */
 }
 
-.some {
-    padding-left: 130px !important;
-}
+/* === Tablet & Desktop Overrides (min-width based on Bootstrap's 'md' breakpoint) === */
+@media (min-width: 768px) {
 
-.footer_logo>img {
-    margin-bottom: 20px;
-}
+    .footer {
+        padding: 2.5rem 0; /* Adjust padding for larger screens */ 
+    }
 
-.st>li {
-    padding-bottom: 3px;
+    /* Reset the mobile stacking margin when columns are side-by-side */
+    .footer .row > [class^="col-"] {
+        margin-bottom: 0;
+    }
+
+    .footer_logo {
+        /* align-items-md-start handled by Bootstrap */
+        margin-bottom: 0; /* Remove bottom margin when side-by-side */
+    }
+
+     .footer_logo img {
+         margin-bottom: 1rem; /* Keep space between logo and icons */
+     }
+
+    .title {
+        font-size: 1.25rem;
+    }
 }
