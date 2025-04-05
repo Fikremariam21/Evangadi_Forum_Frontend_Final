@@ -1,94 +1,107 @@
 /* General Container Styling */
 .container {
     padding: 20px;
-    /* Uncomment and adjust these lines if needed */
-    /* padding-left: 200px; 
-    padding-right: 200px; 
-    margin-left: auto;   
-    margin-right: auto;  
-    max-width: 1200px; */
 }
 
-/* Centered Main Content Area */
+/* Main Content Area (Mobile-First) */
 .homee {
     margin-top: 84px;
     text-align: center;
-    padding-left: 200px; /* Adjust the value as needed */
-    padding-right: 200px; /* Adjust the value as needed */
-    margin-left: auto;   /* Centering the container */
-    margin-right: auto;  /* Centering the container */
+    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 1200px;
 }
 
 /* Header Styling */
 .hed {
-    padding-top: 45px;
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 /* Ask Question Button */
 .qb {
-    background-color: #516CF0; /* Primary button color */
-    width: 200px;
+    background-color: #516CF0;
+    width: 100%;
+    max-width: 200px;
     height: 40px;
     border: none;
     border-radius: 5px;
     color: white;
     font-weight: bold;
     text-align: center;
-    line-height: 22px; /* Center text vertically */
+    line-height: 22px;
     transition: background-color 0.3s ease;
     cursor: pointer;
 }
 
 .qb:hover {
-    background-color: #FE8402 ; /* Darker shade for hover effect */
+    background-color: #FE8402;
 }
 
 /* Welcome Message */
 .wel {
     font-size: 1.2em;
     font-weight: bold;
-    color: #b8c0e9; /* Light color for text */
+    color: #b8c0e9;
+    margin-top: 10px;
 }
 
 /* Section Title */
 .ns {
     margin: 20px 0;
     font-size: 1.5em;
-    color: #b8c0e9; /* Primary color */
+    color: #b8c0e9;
     font-weight: bold;
 }
 
 /* Loading Spinner */
 .loading {
     font-size: 1.5em;
-    color: #999; /* Gray color for loading text */
+    color: #999;
 }
 
-/* Question Item Styling with Semi-Transparent Background */
+/* Question Item Styling */
 .question-item {
-    background: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
-    border: 1px solid #ddd; /* Light border color */
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid #ddd;
     padding: 10px;
-    margin: 10px 0; /* Adjust margin for spacing */
+    margin: 10px 0;
     border-radius: 5px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .question-item:hover {
-    background-color: rgba(255, 255, 255, 0.3); /* Slightly darker shade on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for hover effect */
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
-/* Adjusted Container for Questions */
+/* Load Section */
 .load {
-    padding-left: 180px; 
-    padding-right: 180px; 
-    margin-left: auto;   
-    margin-right: auto;  
+    padding: 0 20px;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 1400px;
 }
+
+/* Responsive Padding for Larger Screens */
+@media (min-width: 768px) {
+    .homee,
+    .load {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .homee,
+    .load {
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+}
+
