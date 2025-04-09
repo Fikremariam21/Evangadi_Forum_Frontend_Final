@@ -13,13 +13,13 @@ function UserAccessPage() {
     setSignIn((prevState) => !prevState); 
   }
 
-  useEffect(() => {
-    if (user?.user_name) {
-      setUser({});
-      localStorage.setItem("token", "");
-      console.log("deleted user");
-    }
-  }, []); 
+  // useEffect(() => {
+  //   if (user?.user_name) {
+  //     setUser({});
+  //     localStorage.setItem("token", "");
+  //     console.log("deleted user");
+  //   }
+  // }, []); 
 
   return (
     <div className="home">

@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { Spinner } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; 
+import "react-toastify/dist/ReactToastify.css";
 
 function SignIn({ toggleForm }) {
   const {
@@ -36,10 +36,12 @@ function SignIn({ toggleForm }) {
       });
 
       localStorage.setItem("token", response.data.token);
-      setUser({
+      const userData = {
         user_name: response.data.user_name,
         user_id: response.data.user_id,
-      });
+      };
+      setUser(userData);
+      localStorage.setItem("user", JSON.stringify(userData));
 
       toast.success("Login successful! Redirecting...", {
         position: "top-right",
@@ -55,12 +57,16 @@ function SignIn({ toggleForm }) {
       let errorMessage = "Something went wrong.";
       if (error.response) {
         const errorMessages = {
-          400: error.response.data.msg || "Invalid credentials. Check your email and password.",
+          400:
+            error.response.data.msg ||
+            "Invalid credentials. Check your email and password.",
           401: "Unauthorized access.",
           404: "Resource not found.",
           500: "Internal server error.",
         };
-        errorMessage = errorMessages[error.response.status] || `Server error: ${error.response.status}`;
+        errorMessage =
+          errorMessages[error.response.status] ||
+          `Server error: ${error.response.status}`;
       } else if (error.request) {
         errorMessage = "Network error. Please check your internet connection.";
       } else {
@@ -114,10 +120,17 @@ function SignIn({ toggleForm }) {
           style={{ padding: "5px" }}
         />
         <div className="signinfas">
-          <i onClick={togglePasswordVisibility} className={passwordVisible ? "fas fa-eye-slash" : "fas fa-eye"}></i>
+          <i
+            onClick={togglePasswordVisibility}
+            className={passwordVisible ? "fas fa-eye-slash" : "fas fa-eye"}
+          ></i>
         </div>
 
-        <button className="login__signInButton" type="submit" disabled={loading}>
+        <button
+          className="login__signInButton"
+          type="submit"
+          disabled={loading}
+        >
           {loading ? <Spinner animation="border" size="sm" /> : "Submit"}
         </button>
       </form>

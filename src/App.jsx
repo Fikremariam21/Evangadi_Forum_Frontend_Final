@@ -30,23 +30,24 @@ function App() {
 
   async function checkUser() {
     try {
+      const token = localStorage.getItem("token"); // Retrieve token from localStorage
       const { data } = await axios.get("/users/check", {
         headers: {
-          Authorization: "Bearer " + token,
-        },
-      }); 
-
-      setUser({ userName: data.user_name, user_id: data.user_id }); 
-
-      // get all questions
-      const res = await axios.get("/all-questions", {
-        headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`, // Include the token in the Authorization header
         },
       });
-      setQuestions(res.data.data);
+
+      setUser({ user_name: data.user_name, user_id: data.user_id });
+
+      // Fetch all questions after user verification
+      const res = await axios.get("/all-questions", {
+        headers: {
+          Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+        },
+      });
+      setQuestions(Array.isArray(res.data.result) ? res.data.result : []); // Ensure questions is an array
     } catch (error) {
-      console.error("Error checking user:", error); // Improved error logging
+      console.error("Error checking user:", error);
       navigate("/");
     }
   }
