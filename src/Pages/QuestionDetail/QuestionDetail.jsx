@@ -1,4 +1,3 @@
- 
 import React, { useContext, useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { QuestionContext } from "../../Context/QuestionContext";
@@ -138,6 +137,12 @@ function DetailQuestion() {
       await getAnswers();
       resetAnswer();
       toast.success("Answer posted successfully!");
+      
+      // Scroll to top after successful answer submission
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     } catch (error) {
       console.error("Error posting answer:", error);
       toast.error(
@@ -178,7 +183,6 @@ function DetailQuestion() {
         <p>This action cannot be undone.</p>
         <button 
           onClick={confirmDelete}
-          
         >
           Yes
         </button>
@@ -353,7 +357,7 @@ function DetailQuestion() {
               className="btn btn-success mt-3"
               disabled={isLoading.answer}
             >
-              {isLoading.answer ? "Posting..." : "Post Your Answer"}
+              {isLoading.answer ? "Posting..." : " Post Your Answer"}
             </button>
           </form>
         </div>

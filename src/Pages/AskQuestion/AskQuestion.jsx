@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import "./AskQuestion.css";
 import { Link } from "react-router-dom";
 
-
 function AskQuestion() {
   const {
     register,
@@ -32,7 +31,7 @@ function AskQuestion() {
     });
     try {
       await axios.post(
-        "/create-question", // Ensure this endpoint does not include '/api' prefix
+        "/create-question", // Updated to match the backend route
         {
           tag: data.tag,
           title: data.title,
@@ -49,10 +48,7 @@ function AskQuestion() {
       setSuccessful(true);
       reset();
     } catch (error) {
-      console.error(
-        "Error posting question:",
-        error.response ? error.response.data : error.message
-      );
+      console.error("Error posting question:", error.response || error);
     }
   }
 
