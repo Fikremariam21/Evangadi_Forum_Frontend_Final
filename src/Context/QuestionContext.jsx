@@ -12,18 +12,23 @@ export const QuestionProvider = ({ children }) => {
     const fetchQuestions = async () => {
       setIsLoading(true);
       try {
-        const token = localStorage.getItem("token"); // Retrieve token from localStorage
-        const response = await axios.get('/all-questions', {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          throw new Error("No token found. Please log in.");
+        }
+
+        const response = await axios.get("/all-questions", { // Remove '/api' prefix
           headers: {
-            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+            Authorization: `Bearer ${token}`,
           },
         });
-        setQuestions(Array.isArray(response.data.result) ? response.data.result : []); // Ensure questions is an array
+
+        setQuestions(Array.isArray(response.data.result) ? response.data.result : []);
         setError(null);
       } catch (err) {
-        console.error("Failed to fetch questions:", err);
+        console.error("Failed to fetch questions:", err.response || err.message);
         setError(err);
-        setQuestions([]); // Ensure questions is always an array
+        setQuestions([]);
       } finally {
         setIsLoading(false);
       }

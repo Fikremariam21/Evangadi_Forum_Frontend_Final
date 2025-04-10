@@ -32,7 +32,7 @@ function AskQuestion() {
     });
     try {
       await axios.post(
-        "/create-question", 
+        "/create-question", // Ensure this endpoint does not include '/api' prefix
         {
           tag: data.tag,
           title: data.title,
@@ -49,7 +49,10 @@ function AskQuestion() {
       setSuccessful(true);
       reset();
     } catch (error) {
-      console.error("Error posting question:", error.response || error);
+      console.error(
+        "Error posting question:",
+        error.response ? error.response.data : error.message
+      );
     }
   }
 
@@ -143,5 +146,5 @@ function AskQuestion() {
   );
 }
 
-export default AskQuestion; 
+export default AskQuestion;
 

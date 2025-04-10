@@ -40,7 +40,7 @@ function App() {
       setUser({ user_name: data.user_name, user_id: data.user_id });
 
       // Fetch all questions after user verification
-      const res = await axios.get("/all-questions", {
+      const res = await axios.get("/api/all-questions", {
         headers: {
           Authorization: `Bearer ${token}`, // Include the token in the Authorization header
         },
